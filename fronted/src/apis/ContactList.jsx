@@ -1,0 +1,16 @@
+const ContactsComponent = async () => {
+  const url = "http://127.0.0.1:8000/api/contacts";
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log("hubo un error", error);
+  }
+};
+export default ContactsComponent;
